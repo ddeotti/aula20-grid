@@ -1,3 +1,24 @@
-body {
-    background-color: beige;
+:root {
+    --cor-preenche: blue;
+}
+
+.grid-container{
+    height: 400px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    gap: 0.5rem;
+    justify-items:end;
+    align-items: start;
+    /*COnteudo*/
+    justify-content: center;
+    align-content: center;
+}
+
+.item {
+    background-color: var(--cor-preenche);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    border-radius: 8px;
 }
