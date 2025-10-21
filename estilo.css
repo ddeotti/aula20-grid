@@ -1,19 +1,33 @@
 :root {
     --cor-preenche: blue;
 }
-
+/*
 .grid-container{
-    height: 400px;
     display: grid;
     grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
     gap: 0.5rem;
-    justify-items:end;
-    align-items: start;
-    /*COnteudo*/
-    justify-content: center;
-    align-content: center;
+    grid-auto-flow: row;
+}*/
+.grid-container {
+     display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto; /* Cabeçalho, Conteúdo, Rodapé */
+  gap: 10px;
+  
+  /* Definindo o "mapa" do layout */
+  grid-template-areas:
+    "header  header"  /* Linha 1: header ocupa as 2 colunas */
+    "sidebar main"    /* Linha 2: sidebar na col 1, main na col 2 */
+    "footer  footer"; /* Linha 3: footer ocupa as 2 colunas */
 }
+
+.item-header  { 
+    background-color: aqua;
+    grid-area: header; 
+}
+.item-sidebar { grid-area: sidebar; }
+.item-main    { grid-area: main; }
+.item-footer  { grid-area: footer; }
 
 .item {
     background-color: var(--cor-preenche);
